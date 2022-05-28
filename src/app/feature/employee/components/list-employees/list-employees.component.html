@@ -1,0 +1,60 @@
+<form [formGroup]="form" (ngSubmit)="save($event)">
+  <h4>
+    Type your id between 1-24
+  </h4>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="inputGroup-sizing-default">Your ID</span>
+    </div>
+    <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" formControlName="id">
+  </div>
+
+  <button class="btn btn-dark" *ngIf="idValue.valid" (click)="EmployeeById(idValue.value)"> Submit</button>
+  <table class="table table-striped table-dark" *ngIf="showSecondTable">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">SALARY</th>
+      <th scope="col">AGE</th>
+      <th scope="col">ANUAL SALARY</th>
+      <th scope="col">IMAGE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">{{employee.id}}</th>
+      <td>{{employee.employee_name}}</td>
+      <td>{{employee.employee_salary}}</td>
+      <td>{{employee.employee_age}}</td>
+      <td>{{employee.employee_anual_salary}}</td>
+      <td>{{employee.profile_image}}</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table class="table table-striped" *ngIf="!showSecondTable">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">NAME</th>
+      <th scope="col">SALARY</th>
+      <th scope="col">AGE</th>
+      <th scope="col">ANUAL SALARY</th>
+      <th scope="col">IMAGE</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor=" let employee of employeeList | async">
+      <th scope="row">{{employee.id}}</th>
+      <td>{{employee.employee_name}}</td>
+      <td>{{employee.employee_salary}}</td>
+      <td>{{employee.employee_age}}</td>
+      <td>{{employee.employee_anual_salary}}</td>
+      <td>{{employee.profile_image}}</td>
+    </tr>
+    </tbody>
+  </table>
+</form>
+
+

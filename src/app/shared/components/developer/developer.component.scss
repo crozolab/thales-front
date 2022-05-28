@@ -1,0 +1,218 @@
+:root {
+  --color--white: #FFFF;
+  --color--black: #000;
+  --color--grey: #585858;
+  --color--primary: #0172D0;
+}
+
+
+.header-social {
+  background: var(--color--primary);
+}
+
+.contact-social {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--color--white);
+}
+
+.contact-social nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+details {
+  cursor: pointer;
+  border: 1px solid #fff;
+  background: #00549a;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+details .languages {
+  position: absolute;
+  background: var(--color--white);
+  padding: 5px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 12px 0px rgba(0, 0, 0, 0.34);
+  flex-direction: column;
+}
+
+.contact-social nav ul li img {
+  width: 16px;
+}
+
+.contact-social nav ul li {
+  margin: 0 10px 0 0;
+}
+
+details .languages li {
+  color: var(--color--black);
+}
+
+details .languages li img {
+  margin: 0 5px 0 0;
+}
+
+details > summary {
+  /* list-style-type: '▶️'; */
+  //list-style-image: url(images/right-arrow.png);
+}
+
+details[open] > summary {
+  /* list-style-type: '🔽'; */
+  //list-style-image: url(images/down-arrow.png);
+}
+
+details > summary::marker {
+  margin: 0;
+}
+
+.header-navigation nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-navigation nav ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.header-navigation nav ul li {
+  margin: 0 30px 0 0;
+}
+
+.header-navigation nav .menu li a {
+  color: var(--color--black);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.header-navigation nav .menu li a.active {
+  color: var(--color--primary);
+  text-decoration: none;
+}
+
+.overlay {
+  position: absolute;
+  background: black;
+  opacity: 0.4;
+  width: 100%;
+  z-index: 1;
+  height: 250px;
+}
+
+.image-content {
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image-content img {
+  width: 100%;
+  background-size: cover;
+  top: -150px;
+  position: relative;
+}
+
+.image-content .content-on-image {
+  position: absolute;
+  top: 80px;
+  right: 45%;
+  z-index: 2;
+  text-align: center;
+}
+
+.content-on-image h4 {
+  font-size: 24px;
+  color: var(--color--white);
+  margin: 0;
+}
+
+.content-on-image .breadcrumb {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+
+.content-on-image .breadcrumb li a {
+  color: var(--color--white);
+  text-decoration: none;
+}
+
+.content-on-image .breadcrumb li {
+  margin: 0 5px 0 5px;
+}
+
+.main-content {
+  display: flex;
+}
+
+aside {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.articles {
+  flex: 3;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+aside h5 {
+  border-bottom: 1px solid #c1c1c1;
+}
+aside .search-box input{
+  height: 40px;
+  background: #F6F6F6;
+  border: none;
+  padding: 0 10px;
+}
+
+aside .search-box button{
+  background: var(--color--primary);
+  border: none;
+  height: 40px;
+  color: var(--color--white);
+}
+
+aside .search-box button span{
+  vertical-align: middle;
+}
+aside .categories ul {
+  padding-left: 0;
+}
+
+aside .categories ul li {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+}
+
+.recent-posts .post  {
+  display: flex;
+  align-items: center;
+}
+.recent-posts .post .body-post {
+  margin: 15px 0 0 10px;
+}
+.recent-posts .post .body-post p{
+  margin-top: 10px;
+}
+
+.articles article {
+  width: 45%;
+  margin: 0 20px 20px 0;
+}
+
+.articles article header h5 {
+  font-size: 18px;
+}
+
+.articles article footer small {
+  color: var(--color--grey)
+}
