@@ -50,8 +50,8 @@ export class ListEmployeesComponent implements OnInit {
         },
           (error: any) => {
           Swal.fire({
-            title: 'OK',
-            text: 'Something',
+            title: 'Error',
+            text: 'Something went wrong',
             icon: 'error',
             confirmButtonText: 'OK'
           })
