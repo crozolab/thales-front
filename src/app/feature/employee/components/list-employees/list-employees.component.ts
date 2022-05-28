@@ -41,16 +41,26 @@ export class ListEmployeesComponent implements OnInit {
   }
 
   EmployeeById(id: number) {
-    this.employeeService.getEmployeeById(id).subscribe((data: any) => {
-      this.employee = data
-    });
-    this.showSecondTable = true;
-    Swal.fire({
-      title: 'OK',
-      text: 'Your information',
-      icon: 'success',
-      confirmButtonText: 'OK'
-    })
+
+    this.employeeService.getEmployeeById(id)
+      .subscribe(
+          (result: Employee) => {
+          this.employee = result
+          console.log(result)
+        },
+          (error: any) => {
+          Swal.fire({
+            title: 'OK',
+            text: 'Something',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          })
+        },
+        () => {
+          this.showSecondTable = true;
+        }
+      );
+
 
   }
 
